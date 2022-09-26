@@ -1,0 +1,25 @@
+name: build node js website
+on: 
+  workflow_dispatch: {}
+#   push: 
+#     branches: 
+#       - main 
+#         - feature/webhost-checking
+#   pull_request:
+#      branches:
+#         - main
+jobs:
+  build:
+  runs-on: ubuntu-21.04
+  steps:
+ # code checkot from noted branch
+   - name: code checkout
+     uses: actions/checkout@v1
+ # biuld website using npm
+   - name: build website
+     run: |
+     npm install
+     npm start
+     
+        
+        
